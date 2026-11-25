@@ -4,7 +4,7 @@
 
 Agentaus is a browser-based chat app powered by the AgentAUS API. It brings together a familiar chat interface, web-assisted answers, image analysis, reusable prompts, notes, document tools and automatic task agents. An optional local PC companion connects the app to folders you approve, with reviewed changes, backups and Undo.
 
-https://lightning-08.github.io/Agentaus/
+https://oly-ai08.github.io/Agentaus_fork/
 
 An **AgentAUS API key** is required for AI responses. API access and usage are governed by your AgentAUS account and plan.
 
