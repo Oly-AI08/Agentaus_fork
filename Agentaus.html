@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>Agentaus · Your chat space</title>
+<link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+<svg aria-hidden="true" style="display:none" xmlns="http://www.w3.org/2000/svg"><defs>
+<symbol id="i-mark" viewBox="0 0 24 24"><path d="m12 2 2.8 6.8L22 12l-7.2 3.2L12 22l-2.8-6.8L2 12l7.2-3.2Z"/><path d="M12 7v10M7 12h10"/></symbol>
+<symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 7V5h7l2 3h9v12H3Z"/></symbol>
+<symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></symbol>
+<symbol id="i-panel" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M9 4v16"/></symbol>
+<symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="8" r="4.5"/><path d="m11.5 11.5 8 8M16 16l2.5-2.5M18.5 18.5 21 16"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M12 19V5m-6 6 6-6 6 6"/></symbol>
+<symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+<symbol id="i-write" viewBox="0 0 24 24"><path d="m16 3 5 5L9 20l-6 1 1-6ZM13 6l5 5"/></symbol>
+<symbol id="i-code" viewBox="0 0 24 24"><path d="m8 6-6 6 6 6m8-12 6 6-6 6M14 3l-4 18"/></symbol>
+<symbol id="i-plan" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M8 3v4m8-4v4M4 11h16m-12 4h2m4 0h2"/></symbol>
+<symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18h6m-5 3h4M8 14c-4-4-1-11 4-11s8 7 4 11c-1 1-1 2-1 2H9s0-1-1-2Z"/></symbol>
+<symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3m-4 4v3"/></symbol>
+<symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></symbol>
+<symbol id="i-retry" viewBox="0 0 24 24"><path d="M20 10a8 8 0 1 0-2 8M20 4v6h-6"/></symbol>
+<symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 16v4h16v-4"/></symbol>
+<symbol id="i-palette" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18h1a2 2 0 0 0 1-3.7 1.8 1.8 0 0 1 1-3.3h2a4 4 0 0 0 4-4c0-4-4-7-9-7Z"/><circle cx="7.5" cy="10" r=".8"/><circle cx="10.5" cy="7" r=".8"/><circle cx="15" cy="7.5" r=".8"/><circle cx="17.5" cy="10.5" r=".8"/></symbol>
+<symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.4 1.4m11.2 11.2L19 19M5 19l1.4-1.4M17.6 6.4 19 5"/></symbol>
+<symbol id="i-more" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></symbol>
+<symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18M9 6V3h6v3M5 6l1 15h12l1-15M10 10v7m4-7v7"/></symbol>
+<symbol id="i-stop" viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="2"/></symbol>
+<symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></symbol>
+<symbol id="i-layout-home" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1Z"/></symbol>
+<symbol id="i-layout-chat" viewBox="0 0 24 24"><path d="M21 11a8 8 0 0 1-8 8H7l-5 3 2-6a8 8 0 1 1 17-5Z"/><path d="M8 9h8m-8 4h5"/></symbol>
+<symbol id="i-layout-agent" viewBox="0 0 24 24"><path d="m12 2 3 5 6 1-4 5 1 7-6-3-6 3 1-7-4-5 6-1Z"/><path d="M12 8v5m-2.5-2.5h5"/></symbol>
+<symbol id="i-layout-inspector" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M15 4v16m3-11h0m0 6h0"/></symbol>
+<symbol id="i-layout-brain" viewBox="0 0 24 24"><path d="M12 4c-3-4-8-1-7 3-4 1-4 6-1 8-1 4 4 7 8 4m0-15c3-4 8-1 7 3 4 1 4 6 1 8 1 4-4 7-8 4Zm0 0v15M5 7l3 2m-4 6 4-1m11-7-3 2m4 6-4-1"/></symbol>
+
+</defs></svg>
+<div class="app">
+<button class="scrim workmode-scrim" id="scrim" aria-label="Close open panel" hidden></button>
+<nav class="workmode-rail" aria-label="Main navigation">
+ <button class="rail-button rail-home" id="railHome" title="New conversation" aria-label="New conversation"><svg aria-hidden="true"><use href="#i-layout-home"/></svg></button>
+ <div class="rail-main"><button class="rail-button" id="railChats" title="Show or hide conversations" aria-label="Show or hide conversations" aria-controls="conversationsSidebar" aria-expanded="true"><svg aria-hidden="true"><use href="#i-layout-chat"/></svg></button><button class="rail-button" id="railFiles" title="Files and folders" aria-label="Files and folders"><svg aria-hidden="true"><use href="#i-folder"/></svg></button><button class="rail-button" id="railAgents" title="Task agents" aria-label="Task agents" aria-controls="workmodeInspector"><svg aria-hidden="true"><use href="#i-layout-agent"/></svg></button></div>
+ <div class="rail-bottom"><button class="rail-button" id="railAppearance" title="Appearance" aria-label="Appearance"><svg aria-hidden="true"><use href="#i-palette"/></svg></button><button class="rail-button" id="railSettings" title="API key and settings" aria-label="API key and settings"><svg aria-hidden="true"><use href="#i-key"/></svg></button><span class="rail-avatar" aria-hidden="true">A</span></div>
+</nav>
+<aside class="sidebar workmode-sidebar" id="conversationsSidebar" aria-label="Conversations">
+ <div class="workmode-sidebar-heading"><div class="brand">Agentaus</div><button class="icon" id="collapseSidebar" aria-label="Hide conversations" title="Hide conversations"><svg aria-hidden="true"><use href="#i-panel"/></svg></button></div>
+ <button class="new-chat" id="newChat"><svg aria-hidden="true"><use href="#i-write"/></svg><span>New chat</span><kbd>Ctrl / ⌘ K</kbd></button>
+ <label class="search workmode-search"><svg aria-hidden="true"><use href="#i-search"/></svg><input id="search" placeholder="Search conversations" aria-label="Search conversations" autocomplete="off"></label>
+ <div class="history-label">Recents</div><div class="history" id="history"></div>
+ <div class="sidebar-bottom"><button class="connection" id="appearanceButton"><span class="keybox"><svg aria-hidden="true"><use href="#i-palette"/></svg></span><span><strong>Appearance</strong><small>Themes, colours &amp; fonts</small></span></button><button class="connection" id="connect"><span class="keybox"><svg aria-hidden="true"><use href="#i-key"/></svg></span><span><strong id="connectionTitle">Connect Agentaus</strong><small id="connectionHint">Add your API key to begin</small></span><i class="status-dot" id="connectionDot" aria-hidden="true"></i></button><div class="side-note"><svg aria-hidden="true"><use href="#i-lock"/></svg><span id="storageSide">History stays in this browser</span></div></div>
+</aside>
+
+<main class="main">
+ <header class="topbar workmode-topbar">
+ <button class="icon" id="openSidebar" aria-label="Show conversations" title="Show conversations" aria-controls="conversationsSidebar" aria-expanded="true"><svg aria-hidden="true"><use href="#i-panel"/></svg></button>
+ <div class="workmode-chat-heading"><span class="chat-title" id="chatTitle"></span><span class="workmode-model-label">Agentaus <span>V1</span></span></div>
+ <div class="top-right"><label class="thinking-control" title="Choose reasoning and estimated context budget. The budget includes room for the reply; provider limits still apply."><svg aria-hidden="true"><use href="#i-layout-brain"/></svg><span>Thinking</span><select id="thinkingLevel" aria-label="Thinking level and context budget" aria-describedby="contextBudgetStatus"><option value="none">Fast · 64k</option><option value="low" selected>Standard · 128k</option><option value="high">Deep · 255k</option></select></label><button class="icon" id="runAgentButton" title="Run a task agent" aria-label="Run a task agent"><svg aria-hidden="true"><use href="#i-layout-agent"/></svg></button><button class="icon" id="workspaceButton" title="Files and folders" aria-label="Files and folders"><svg aria-hidden="true"><use href="#i-folder"/></svg></button><button class="icon" id="exportChat" title="Export conversation" aria-label="Export conversation" disabled><svg aria-hidden="true"><use href="#i-download"/></svg></button><button class="icon" id="theme" title="Appearance" aria-label="Appearance"><svg aria-hidden="true"><use href="#i-palette"/></svg></button><button class="icon" id="settingsButton" title="API key and settings" aria-label="API key and settings"><svg aria-hidden="true"><use href="#i-key"/></svg></button><button class="icon inspector-toggle" id="toggleInspector" title="Hide workspace panel" aria-label="Hide workspace panel" aria-controls="workmodeInspector" aria-expanded="true"><svg aria-hidden="true"><use href="#i-layout-inspector"/></svg></button></div>
+</header>
+
+ <div class="scroll" id="scroll">
+  <section class="welcome" id="welcome"><div class="hero-logo"><svg aria-hidden="true"><use href="#i-mark"/></svg></div><div class="eyebrow">A LITTLE SPACE TO THINK BIG</div><h1>What can we work on?</h1><p>Write, explore, plan, or figure something out.</p><button class="connect-banner" id="welcomeConnect"><svg><use href="#i-key"/></svg>Add your Agentaus API key <span>→</span></button><div class="suggestions">
+   <button class="suggestion" data-prompt="Help me write a "><svg><use href="#i-write"/></svg><strong>Find the right words</strong><small>Draft, polish, or start fresh</small></button>
+   <button class="suggestion" data-prompt="Explain this in simple terms: "><svg><use href="#i-bulb"/></svg><strong>Make it make sense</strong><small>Break down a tricky topic</small></button>
+   <button class="suggestion" data-prompt="Help me make a practical plan for "><svg><use href="#i-plan"/></svg><strong>Put a plan together</strong><small>Turn an idea into next steps</small></button>
+   <button class="suggestion" data-prompt="Help me review this code:&#10;&#10;"><svg><use href="#i-code"/></svg><strong>Work through code</strong><small>Debug, explain, and build</small></button>
+  </div></section>
+  <section class="messages" id="messages" aria-label="Chat messages" hidden></section>
+ </div>
+ <footer class="composer-area"><div class="storage-warning" id="storageWarning" role="status" hidden>Browser storage is unavailable. Chats will last only for this session.</div><div class="composer-wrap"><form class="composer" id="composer"><label for="prompt" class="sr-only">Message Agentaus</label><div id="pastedImages" class="pasted-images" role="list" aria-label="Images attached to your next message" hidden></div><span id="pastedImagesStatus" class="image-paste-sr-only" role="status" aria-live="polite"></span>
+<textarea id="prompt" rows="1" placeholder="Message Agentaus…"></textarea><div class="composer-tools"><div class="composer-info"><button class="icon" type="button" id="uploadFilesButton" title="Add files" aria-label="Add files"><svg><use href="#i-plus"/></svg></button><button class="workspace-chip" type="button" id="folderChip" title="Choose a folder on this PC"><svg><use href="#i-folder"/></svg><span id="folderChipLabel">Open folder</span></button><svg><use href="#i-lock"/></svg><span id="composerHint">Your key goes directly to Agentaus</span></div><button class="send" id="send" aria-label="Send message" title="Send message" disabled><svg><use href="#i-arrow"/></svg></button></div></form><p id="contextBudgetStatus" class="footer-note" role="status" aria-live="polite"></p><p class="footer-note">Agentaus can make mistakes. Check important information. <button id="privacy">Privacy & settings</button></p></div></footer>
+</main>
+<aside class="workmode-inspector" id="workmodeInspector" aria-label="Outputs, sources and task agents" tabindex="-1">
+ <div class="inspector-card"><div class="inspector-toolbar"><label class="sr-only" for="inspectorView">Workspace panel view</label><select id="inspectorView"><option value="overview">Workspace</option><option value="outputs">Outputs</option><option value="sources">Sources</option><option value="subagents">Subagents</option></select><button class="icon" id="closeInspector" aria-label="Hide workspace panel" title="Hide workspace panel"><svg aria-hidden="true"><use href="#i-close"/></svg></button></div>
+  <div class="inspector-scroll">
+   <section class="inspector-section" id="inspectorOutputs" aria-labelledby="outputsHeading"><div class="inspector-section-heading"><h2 id="outputsHeading">Outputs <span id="outputsCount">0</span></h2></div><div id="outputsList" class="inspector-list"><p class="inspector-empty">Files you create or update will appear here.</p></div></section>
+   <section class="inspector-section" id="inspectorSources" aria-labelledby="sourcesHeading"><div class="inspector-section-heading"><h2 id="sourcesHeading">Sources <span id="sourcesCount">0</span></h2><button class="icon inspector-add" id="addSource" aria-label="Add files or a folder" title="Add files or a folder"><svg aria-hidden="true"><use href="#i-plus"/></svg></button></div><div id="sourcesList" class="inspector-list"><p class="inspector-empty">Add files or a folder to give your chat context.</p></div></section>
+   <section class="inspector-section" id="inspectorSubagents" aria-labelledby="subagentsHeading"><div class="inspector-section-heading"><h2 id="subagentsHeading">Subagents <span id="subagentsCount">0</span></h2><button class="icon inspector-add" id="createAgent" aria-label="Run a task agent manually" title="Run a task agent manually"><svg aria-hidden="true"><use href="#i-plus"/></svg></button></div><label class="inspector-auto-row" for="autoAgentsEnabled"><span>Automatic agents</span><input type="checkbox" role="switch" id="autoAgentsEnabled" checked aria-describedby="autoAgentsHint"></label><p class="inspector-auto-hint" id="autoAgentsHint">Agentaus can delegate focused parts of your request. Each task uses your API plan.</p><div id="subagentsList" class="inspector-list"><p class="inspector-empty">Agents appear here when Agentaus delegates part of a task.</p></div><button class="inspector-text-button" id="manageAgents"><svg aria-hidden="true"><use href="#i-layout-agent"/></svg>Advanced agent settings</button></section>
+  </div><div class="inspector-footnote"><span class="status-dot" aria-hidden="true"></span>Only your real files and task runs appear here.</div>
+ </div>
+</aside>
+
+</div>
+<div class="popup" id="chatMenu" hidden><button id="renameChat"><svg><use href="#i-write"/></svg>Rename chat</button><button class="danger" id="deleteChat"><svg><use href="#i-trash"/></svg>Delete chat</button></div>
+<button class="connection" type="button" id="companionButton"><span class="keybox"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8m-4-4v4M7 9h10m-10 4h6"/></svg></span><span><strong>PC companion</strong><small id="companionButtonHint">Connect approved local folders</small></span></button>
+<dialog id="companionDialog" class="companion-dialog" aria-labelledby="companionTitle"><div class="companion-heading"><div><span class="companion-eyebrow">YOUR FILES, ON THIS COMPUTER</span><h2 id="companionTitle">PC companion</h2></div><button class="icon" type="button" id="companionClose" aria-label="Close PC companion"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg></button></div><p>Connect the local companion to work with folders you approved when starting it. File changes still go through your review, with local backups and Undo.</p><div class="companion-address"><span>Local address</span><code id="companionAddress">http://127.0.0.1:43127</code></div><label class="field-label" for="companionPort">Local port</label><input class="text-input" id="companionPort" type="number" min="1024" max="65535" step="1" value="43127" inputmode="numeric"><small class="help">The host is always 127.0.0.1. Change the port only if you started the companion with a custom port.</small><label class="field-label" for="companionToken">Pairing token</label><div class="companion-pair-row"><input class="text-input" id="companionToken" type="password" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Paste the token from the companion console" maxlength="512"><button class="btn" type="button" id="companionPair">Pair</button></div><small class="help">The token stays in this tab’s memory. It is never saved in browser storage or sent to the AI.</small><div class="companion-status" id="companionStatus" role="status">Start the companion on this computer, then paste its pairing token.</div><div class="companion-error" id="companionError" role="alert" hidden></div><label class="field-label" for="companionRoot">Approved folder</label><select id="companionRoot" disabled><option value="">Pair the companion to see approved folders</option></select><p class="companion-root-path" id="companionRootPath"></p><div class="dialog-buttons"><button class="btn danger" type="button" id="companionDisconnect" style="margin-right:auto" hidden>Disconnect</button><button class="btn primary" type="button" id="companionConnect" disabled>Connect folder</button></div><section class="companion-backups" aria-labelledby="companionBackupsTitle"><div class="companion-backups-heading"><h3 id="companionBackupsTitle">Local backups</h3><button class="btn" type="button" id="companionBackupRefresh" disabled>Refresh</button></div><div id="companionBackupsList"><p class="companion-empty">Connect a folder to review its saved changes.</p></div></section><details class="companion-help"><summary>Having trouble connecting?</summary><p>Keep the companion running and use the pairing token printed in its console. If your browser blocks access from the hosted app, open <a id="companionLocalLink" href="http://127.0.0.1:43127" target="_blank" rel="noopener noreferrer">the local Agentaus app</a> on this computer. The companion exposes only the approved folders, with a 20 MiB file limit.</p></details></dialog>
+<dialog id="companionUndoDialog" class="companion-dialog" aria-labelledby="companionUndoTitle"><h2 id="companionUndoTitle">Undo this file change?</h2><p id="companionUndoDescription"></p><small class="help">The companion checks the current file against this save before restoring it. A further change will stop Undo rather than overwrite newer work.</small><div class="companion-error" id="companionUndoError" role="alert" hidden></div><div class="dialog-buttons"><button class="btn" type="button" id="companionUndoCancel">Keep current file</button><button class="btn primary" type="button" id="companionUndoConfirm">Undo change</button></div></dialog>
+
+<div id="toolboxSelection" class="toolbox-selection" aria-label="Selected chat tools" hidden></div>
+<div id="agentausToolboxMenu" class="toolbox-menu" role="menu" aria-label="Chat tools" hidden>
+ <button type="button" role="menuitem" data-toolbox-action="upload"><span class="toolbox-menu-icon">＋</span><span>Add photos &amp; files</span></button>
+ <button type="button" role="menuitem" data-toolbox-action="library"><span class="toolbox-menu-icon">▤</span><span>Add from library</span></button>
+ <button type="button" role="menuitemcheckbox" aria-checked="false" data-toolbox-action="web"><span class="toolbox-menu-icon">◎</span><span>Web search</span><span class="toolbox-menu-check" aria-hidden="true">✓</span></button>
+ <button type="button" role="menuitem" data-toolbox-action="sketch"><span class="toolbox-menu-icon">✎</span><span>Sketch</span></button>
+ <div class="toolbox-menu-divider" role="separator"></div>
+ <button type="button" role="menuitem" data-toolbox-action="templates"><span class="toolbox-menu-icon">▧</span><span>Template Creator</span></button>
+ <button type="button" role="menuitem" data-toolbox-action="pages"><span class="toolbox-menu-icon">▱</span><span>Pages</span></button>
+ <button type="button" role="menuitem" data-toolbox-action="pptx"><span class="toolbox-format-icon toolbox-format-pptx">P</span><span>Presentations</span></button>
+ <button type="button" role="menuitem" data-toolbox-action="pdf"><span class="toolbox-format-icon toolbox-format-pdf">PDF</span><span>PDF</span></button>
+ <button type="button" role="menuitem" data-toolbox-action="docx"><span class="toolbox-format-icon toolbox-format-docx">W</span><span>Documents</span></button>
+</div>
+<dialog id="toolboxLibraryDialog" class="toolbox-dialog" aria-labelledby="toolboxLibraryTitle"><div class="toolbox-heading"><div><span class="toolbox-eyebrow">PERSONAL FILES · THIS BROWSER</span><h2 id="toolboxLibraryTitle">Your file library</h2></div><button class="icon" type="button" data-toolbox-close="toolboxLibraryDialog" aria-label="Close file library">×</button></div><p>Import copies of files you want to keep in this browser. Nothing is sent to the AI until you attach a file and send a message.</p><div class="toolbox-toolbar"><input class="text-input" id="toolboxLibrarySearch" type="search" aria-label="Search personal file library" placeholder="Search files"><button class="btn primary" type="button" id="toolboxLibraryImport">Import files</button><input id="toolboxLibraryImportInput" type="file" multiple hidden></div><div id="toolboxLibraryStatus" class="toolbox-status" role="status">Up to 50 files · 20 MB each · 100 MB total.</div><div id="toolboxLibraryList" class="toolbox-item-list"></div><small class="help">These are local browser copies, separate from any ChatGPT Library. Clearing browser data removes them.</small></dialog>
+<dialog id="toolboxTemplatesDialog" class="toolbox-dialog toolbox-wide-dialog" aria-labelledby="toolboxTemplatesTitle"><div class="toolbox-heading"><div><span class="toolbox-eyebrow">REUSABLE PROMPTS</span><h2 id="toolboxTemplatesTitle">Template Creator</h2></div><button class="icon" type="button" data-toolbox-close="toolboxTemplatesDialog" aria-label="Close Template Creator">×</button></div><p>Save a prompt once, then fill in variables such as <code>{{topic}}</code> whenever you use it. Templates stay in this browser.</p><div class="toolbox-toolbar"><input class="text-input" id="toolboxTemplateSearch" type="search" aria-label="Search templates" placeholder="Search templates"><button class="btn" type="button" id="toolboxTemplateNew">New template</button></div><div class="toolbox-split"><div class="toolbox-item-list toolbox-saved-list" id="toolboxTemplateList"></div><div class="toolbox-editor"><label class="field-label" for="toolboxTemplateName">Template name</label><input class="text-input" id="toolboxTemplateName" maxlength="100" placeholder="e.g. Explain a topic"><label class="field-label" for="toolboxTemplatePrompt">Prompt</label><textarea id="toolboxTemplatePrompt" rows="8" maxlength="20000" placeholder="Explain {{topic}} to {{audience}}, using three clear examples."></textarea><div id="toolboxTemplateStatus" class="toolbox-status" role="status">Choose a template or write your own.</div><div class="toolbox-editor-actions"><button class="btn danger" type="button" id="toolboxTemplateDelete" disabled>Delete</button><button class="btn" type="button" id="toolboxTemplateSave">Save template</button><button class="btn primary" type="button" id="toolboxTemplateUse">Use in chat</button></div></div></div><div class="toolbox-footer-tools"><button class="toolbox-link" type="button" id="toolboxTemplatesImport">Import JSON</button><button class="toolbox-link" type="button" id="toolboxTemplatesExport">Export templates</button><input id="toolboxTemplatesImportInput" type="file" accept="application/json,.json" hidden><small>Maximum 100 templates · 20,000 characters per prompt.</small></div></dialog>
+<dialog id="toolboxVariablesDialog" class="toolbox-dialog" aria-labelledby="toolboxVariablesTitle"><div class="toolbox-heading"><h2 id="toolboxVariablesTitle">Fill in your template</h2><button class="icon" type="button" data-toolbox-close="toolboxVariablesDialog" aria-label="Close template variables">×</button></div><p>Your filled template will be added to the composer. You can review it before sending.</p><div id="toolboxVariableFields"></div><div class="toolbox-status" id="toolboxVariablesStatus" role="status" hidden></div><div class="dialog-buttons"><button class="btn" type="button" data-toolbox-close="toolboxVariablesDialog">Cancel</button><button class="btn primary" type="button" id="toolboxVariablesUse">Add to composer</button></div></dialog>
+<dialog id="toolboxPagesDialog" class="toolbox-dialog toolbox-wide-dialog" aria-labelledby="toolboxPagesTitle"><div class="toolbox-heading"><div><span class="toolbox-eyebrow">NOTES &amp; WORKING DOCUMENTS</span><h2 id="toolboxPagesTitle">Pages</h2></div><button class="icon" type="button" data-toolbox-close="toolboxPagesDialog" aria-label="Close Pages">×</button></div><p>Write and organise pages in spaces. Save keeps a copy in this browser; Use in chat attaches a real Markdown file.</p><div class="toolbox-toolbar"><input class="text-input" id="toolboxPageSearch" type="search" aria-label="Search pages" placeholder="Search pages"><select id="toolboxPageSpaceFilter" aria-label="Filter pages by space"><option value="">All spaces</option></select><button class="btn" type="button" id="toolboxPageNew">New page</button></div><div class="toolbox-split"><div class="toolbox-item-list toolbox-saved-list" id="toolboxPagesList"></div><div class="toolbox-editor"><label class="field-label" for="toolboxPageTitle">Page title</label><input class="text-input" id="toolboxPageTitle" maxlength="120" placeholder="Untitled page"><label class="field-label" for="toolboxPageSpace">Space</label><input class="text-input" id="toolboxPageSpace" maxlength="80" placeholder="e.g. Research, Work, Recipes"><div class="toolbox-page-content-heading"><label class="field-label" for="toolboxPageContent">Content · Markdown</label><button class="toolbox-link" type="button" id="toolboxPagePreviewToggle" aria-pressed="false">Preview</button></div><textarea id="toolboxPageContent" rows="10" maxlength="200000" placeholder="Start writing…"></textarea><div id="toolboxPagePreview" class="markdown toolbox-page-preview" hidden></div><div id="toolboxPageStatus" class="toolbox-status" role="status">Changes are saved only when you click Save page.</div><div class="toolbox-editor-actions"><button class="btn danger" type="button" id="toolboxPageDelete" disabled>Delete</button><button class="btn" type="button" id="toolboxPageExport">Export .md</button><button class="btn" type="button" id="toolboxPageSave">Save page</button><button class="btn primary" type="button" id="toolboxPageUse">Use in chat</button></div></div></div></dialog>
+<dialog id="toolboxConfirmDialog" class="toolbox-dialog" aria-labelledby="toolboxConfirmTitle"><h2 id="toolboxConfirmTitle">Confirm</h2><p id="toolboxConfirmDescription"></p><div class="dialog-buttons"><button class="btn" type="button" id="toolboxConfirmCancel">Cancel</button><button class="btn primary" type="button" id="toolboxConfirmYes">Confirm</button></div></dialog>
+<dialog id="sketchDialog" class="sketch-dialog" aria-labelledby="sketchTitle"><div class="dialog-head"><h2 id="sketchTitle">Sketch</h2><button class="icon" type="button" id="sketchClose" aria-label="Close sketch">×</button></div><p>Draw with a mouse, finger or pen, then attach the drawing to your message.</p><div class="sketch-toolbar"><label>Colour <input id="sketchColor" type="color" value="#202a23" aria-label="Drawing colour"></label><label>Width <input id="sketchWidth" type="range" min="1" max="28" value="4" aria-label="Drawing width"></label><label><input id="sketchEraser" type="checkbox"> Eraser</label><button id="sketchUndo" class="btn" type="button">Undo stroke</button><button id="sketchClear" class="btn" type="button">Clear</button></div><div class="sketch-surface"><canvas id="sketchCanvas" width="1024" height="640" tabindex="0" aria-label="Drawing canvas. Draw with a pointer; use Undo stroke or Control Z to undo."></canvas></div><p id="sketchStatus" class="help" role="status">Your sketch stays in this tab until you attach it.</p><div class="dialog-buttons"><button id="sketchAttach" type="button" class="btn primary" disabled>Attach sketch</button></div></dialog>
+
+<dialog id="settings" aria-labelledby="settingsTitle"><div class="dialog-head"><h2 id="settingsTitle">Your connection</h2><button class="icon" id="closeSettings" aria-label="Close settings"><svg><use href="#i-close"/></svg></button></div><p>Connect your own Agentaus account. Your API usage is billed by Agentaus under your plan.</p><label class="field-label" for="apiKey">Agentaus API key</label><div class="key-input"><input id="apiKey" type="password" placeholder="Paste your API key" autocomplete="off" spellcheck="false" autocapitalize="off"><button class="icon" id="showKey" aria-label="Show API key" aria-pressed="false"><svg><use href="#i-eye"/></svg></button></div><small class="help">Your key is kept in memory for this tab only. Enter it again after refreshing. Paste the actual key, rather than the secret reference in VS Code.</small><div class="server"><div><span>Server</span><code>agentaus.com.au/api/v1</code></div><div><span>Model</span><code>agentaus.v1</code></div></div><p class="help" id="contextBudgetHelp"><strong>Thinking and context:</strong> Fast uses a 64k context target, Standard 128k, and Deep 255k. Each budget includes conversation/file context, space for the reply, and a safety margin. Text token counts are estimates. Older turns may be left out of a request but stay in your saved chat. The latest turn and its tool results are kept together. These are app targets; AgentAUS may enforce a lower limit. Its public API documentation does not confirm a 255k context window.</p><label class="field-label" for="instructions">How should Agentaus respond? <span style="color:var(--muted);font-weight:400">Optional</span></label><textarea id="instructions" placeholder="e.g. Use Australian English. Keep answers clear and practical." maxlength="12000"></textarea><small class="help">Messages go directly from your browser to Agentaus. Chat history and these instructions are saved in this browser; your key is never saved with them. This is a personal chat client. Open this file directly in Chrome or Edge; embedded previews may block the connection.</small><div class="dialog-error" id="keyError" role="alert" hidden></div><div class="dialog-buttons"><button class="btn danger" id="forgetKey" style="margin-right:auto" hidden>Forget key</button><button class="btn" id="cancelSettings">Cancel</button><button class="btn primary" id="saveKey">Connect</button></div><div class="data-tools"><span>Saved conversations</span><button class="danger" id="clearChats">Clear all chats</button></div><small class="help">Connection check uses the model list and does not generate a chat reply. <a href="https://agentaus.com.au/eng/docs/developers/chat-completions-api" target="_blank" rel="noopener noreferrer">API documentation ↗</a></small></dialog>
+<dialog id="actionDialog" aria-labelledby="actionTitle"><h2 id="actionTitle"></h2><p id="actionDescription"></p><input class="text-input" id="actionInput" aria-label="Chat name" maxlength="90" hidden><div class="dialog-buttons"><button class="btn" id="actionCancel">Cancel</button><button class="btn primary" id="actionConfirm">Save</button></div></dialog>
+<dialog id="workspaceDialog" class="workspace-dialog" aria-labelledby="workspaceHeading">
+ <div class="dialog-head"><h2 id="workspaceHeading">Your files</h2><button class="icon" data-close-dialog="workspaceDialog" aria-label="Close files">×</button></div>
+ <p>Choose a folder or add individual files. Chat reads the content it needs for your request and prepares edits for review. Content used in chat is sent to Agentaus.</p>
+ <div class="workspace-toolbar"><button class="btn primary" id="chooseFolder">Open folder</button><button class="btn" id="chooseFiles">Add files</button><button class="btn" id="clearFiles" disabled>Clear selected files</button><button class="btn" id="disconnectFolder" disabled>Disconnect folder</button></div>
+ <input id="fileInput" type="file" multiple hidden><details id="driveIndexHelp" class="drive-index-help"><summary>Need a drive-wide file list?</summary><p>Chrome may block selecting <code>C:\</code> or system folders. Agentaus cannot override browser or Windows permissions. Choose a specific folder for reading/editing, or import a metadata-only file list.</p><ol><li>Download the PowerShell helper and run it on your PC using your normal PowerShell permissions.</li><li>Choose a drive/folder. The helper lists names, paths, sizes and dates, skips protected/system locations, and saves a JSON index.</li><li>Import that JSON here. Chat can search the index, but cannot read the listed files until you select those files or their folder.</li></ol><div class="workspace-toolbar"><button type="button" class="btn" id="downloadDriveIndexScript">Download index helper</button><button type="button" class="btn" id="importDriveIndex">Import file list</button></div><input type="file" id="driveIndexInput" accept=".json,application/json" hidden><p id="driveIndexStatus" class="help" role="status" hidden></p></details>
+<p id="workspaceCompatibility" class="help"></p><div class="workspace-status" id="workspaceStatus">No folder or files selected</div>
+ <div class="file-path-bar"><button class="icon" id="folderUp" title="Parent folder" aria-label="Parent folder" disabled>↑</button><span id="folderPath">Your files</span><button class="icon" id="refreshFiles" title="Refresh files" aria-label="Refresh files" disabled>↻</button></div>
+ <div class="file-list" id="fileList"><p>Open a folder or add files to get started.</p></div><div id="workspaceChanges" class="file-proposals" aria-label="Pending file changes"></div>
+ <small class="help">Create: Word DOCX, PDF, PowerPoint PPTX and text/code. Read: text/code, DOCX, PPTX, XLSX, selectable-text PDFs, and common images. Edit: text/code, Word/PowerPoint text, and Excel cells. PDFs and images are read-only. Other binary formats need a dedicated editor. Documents up to 20 MB; text up to 1 MB. Files and pending changes stay in this tab session.</small>
+</dialog>
+<dialog id="filePreviewDialog" class="workspace-dialog" aria-labelledby="filePreviewTitle"><div class="dialog-head"><h2 id="filePreviewTitle">File preview</h2><button class="icon" data-close-dialog="filePreviewDialog" aria-label="Close preview">×</button></div><p id="filePreviewInfo"></p><img id="filePreviewImage" class="file-preview-image" alt="Selected file preview" hidden><pre class="file-preview" id="filePreviewContent"></pre><div class="dialog-buttons"><button class="btn primary" id="askAboutFile">Ask in chat</button></div></dialog>
+<dialog id="proposalDialog" class="proposal-dialog" aria-labelledby="proposalTitle"><div class="dialog-head"><h2 id="proposalTitle">Review file change</h2><button class="icon" data-close-dialog="proposalDialog" aria-label="Close change review">×</button></div><div class="proposal-path" id="proposalPath"></div><p id="proposalDescription"></p><div class="change-grid"><section><span class="change-label">Before</span><pre id="proposalBefore"></pre></section><section><span class="change-label">Proposed change</span><pre id="proposalAfter"></pre></section></div><div class="dialog-error" id="proposalError" role="alert" hidden></div><div class="dialog-buttons"><button class="btn" id="rejectProposal">Discard</button><button class="btn primary" id="applyProposal">Apply changes</button></div></dialog>
+
+<dialog id="agentManagerDialog" class="agent-dialog" aria-labelledby="agentManagerTitle"><div class="agent-dialog-heading"><div><span class="agent-eyebrow">REUSABLE ROLES</span><h2 id="agentManagerTitle">Task agents</h2></div><button class="icon" id="agentManagerClose" aria-label="Close task agent manager"><svg aria-hidden="true"><use href="#i-close"/></svg></button></div><p>Create reusable roles for focused tasks. Each run uses your Agentaus API key and the selected thinking level.</p><div id="agentProfilesList" class="agent-profiles-list"><p class="agent-empty">No agents yet. Create one to give it a role and instructions.</p></div><div class="dialog-buttons"><button class="btn primary" id="agentManagerCreate"><svg aria-hidden="true"><use href="#i-plus"/></svg>Create agent</button></div></dialog>
+<dialog id="agentEditor" class="agent-dialog" aria-labelledby="agentEditorTitle"><div class="agent-dialog-heading"><div><span class="agent-eyebrow">AGENT SETTINGS</span><h2 id="agentEditorTitle">Create task agent</h2></div></div><p>Give your agent a clear role. Saved instructions guide its replies; they do not train the underlying model.</p><label class="field-label" for="agentName">Agent name</label><input class="text-input" id="agentName" maxlength="80" placeholder="e.g. Code reviewer" autocomplete="off"><label class="field-label" for="agentInstructions">Role and instructions</label><textarea id="agentInstructions" maxlength="12000" placeholder="Describe what this agent should do, how it should work, and the result you want." rows="6"></textarea><div class="agent-editor-options"><div><label class="field-label" for="agentThinking">Thinking level</label><select id="agentThinking"><option value="inherit">Use chat setting</option><option value="none">Fast · 64k</option><option value="low">Standard · 128k</option><option value="high">Deep · 255k</option></select></div><div><label class="field-label" for="agentFileAccess">File access</label><select id="agentFileAccess"><option value="none">No file access</option><option value="read">Read selected files</option><option value="propose">Read and propose changes</option></select></div></div><small class="help">File access uses only files or folders you explicitly select. Proposed edits still need your review before any save.</small><div id="agentError" class="dialog-error" role="alert" hidden></div><div class="dialog-buttons"><button class="btn danger" id="agentDelete" style="margin-right:auto" hidden>Delete agent</button><button class="btn" id="agentCancel">Cancel</button><button class="btn primary" id="agentSave">Save agent</button></div></dialog>
+<dialog id="agentRunDialog" class="agent-dialog" aria-labelledby="agentRunTitle"><div class="agent-dialog-heading"><h2 id="agentRunTitle">Run a task agent</h2></div><p>Give a focused task to one of your agents. Its progress and result will appear in the Subagents panel.</p><label class="field-label" for="agentRunProfile">Agent</label><select id="agentRunProfile"><option value="">Choose an agent</option></select><label class="field-label" for="agentTask">Task</label><textarea id="agentTask" rows="6" maxlength="12000" placeholder="What would you like this agent to work on?"></textarea><div id="agentRunError" class="dialog-error" role="alert" hidden></div><small class="help">This starts a real API request under your Agentaus plan.</small><div class="dialog-buttons"><button class="btn" id="agentRunCancel">Cancel</button><button class="btn primary" id="agentRunStart">Start task</button></div></dialog>
+<dialog id="agentResultDialog" class="agent-dialog agent-result-dialog" aria-labelledby="agentResultTitle"><div class="agent-dialog-heading"><h2 id="agentResultTitle">Agent result</h2><button class="icon" id="agentResultClose" aria-label="Close agent result"><svg aria-hidden="true"><use href="#i-close"/></svg></button></div><div id="agentResultContent" class="markdown agent-result-content"></div><div class="dialog-buttons"><button class="btn danger" id="agentResultCancel" style="margin-right:auto" hidden>Cancel task</button><button class="btn primary" id="agentResultUse">Use in chat</button></div></dialog>
+
+<div class="toast" id="toast" role="status" hidden></div><div class="sr-only" id="live" role="status" aria-live="polite"></div>
+<!--
+Third-party libraries bundled for local document parsing.
+
+fflate 0.8.3 — MIT
+MIT License
+
+Copyright (c) 2026 Arjun Barrett
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+PDF.js 6.5.438 — Apache 2.0
+
+                                 Apache License
+                           Version 2.0, January 2004
+                        http://www.apache.org/licenses/
+
+   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+
+   1. Definitions.
+
+      "License" shall mean the terms and conditions for use, reproduction,
+      and distribution as defined by Sections 1 through 9 of this document.
+
+      "Licensor" shall mean the copyright owner or entity authorized by
+      the copyright owner that is granting the License.
+
+      "Legal Entity" shall mean the union of the acting entity and all
+      other entities that control, are controlled by, or are under common
+      control with that entity. For the purposes of this definition,
+      "control" means (i) the power, direct or indirect, to cause the
+      direction or management of such entity, whether by contract or
+      otherwise, or (ii) ownership of fifty percent (50%) or more of the
+      outstanding shares, or (iii) beneficial ownership of such entity.
+
+      "You" (or "Your") shall mean an individual or Legal Entity
+      exercising permissions granted by this License.
+
+      "Source" form shall mean the preferred form for making modifications,
+      including but not limited to software source code, documentation
+      source, and configuration files.
+
+      "Object" form shall mean any form resulting from mechanical
+      transformation or translation of a Source form, including but
+      not limited to compiled object code, generated documentation,
+      and conversions to other media types.
+
+      "Work" shall mean the work of authorship, whether in Source or
+      Object form, made available under the License, as indicated by a
+      copyright notice that is included in or attached to the work
+      (an example is provided in the Appendix below).
+
+      "Derivative Works" shall mean any work, whether in Source or Object
+      form, that is based on (or derived from) the Work and for which the
+      editorial revisions, annotations, elaborations, or other modifications
+      represent, as a whole, an original work of authorship. For the purposes
+      of this License, Derivative Works shall not include works that remain
+      separable from, or merely link (or bind by name) to the interfaces of,
+      the Work and Derivative Works thereof.
+
+      "Contribution" shall mean any work of authorship, including
+      the original version of the Work and any modifications or additions
+      to that Work or Derivative Works thereof, that is intentionally
+      submitted to Licensor for inclusion in the Work by the copyright owner
+      or by an individual or Legal Entity authorized to submit on behalf of
+      the copyright owner. For the purposes of this definition, "submitted"
+      means any form of electronic, verbal, or written communication sent
+      to the Licensor or its representatives, including but not limited to
+      communication on electronic mailing lists, source code control systems,
+      and issue tracking systems that are managed by, or on behalf of, the
+      Licensor for the purpose of discussing and improving the Work, but
+      excluding communication that is conspicuously marked or otherwise
+      designated in writing by the copyright owner as "Not a Contribution."
+
+      "Contributor" shall mean Licensor and any individual or Legal Entity
+      on behalf of whom a Contribution has been received by Licensor and
+      subsequently incorporated within the Work.
+
+   2. Grant of Copyright License. Subject to the terms and conditions of
+      this License, each Contributor hereby grants to You a perpetual,
+      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+      copyright license to reproduce, prepare Derivative Works of,
+      publicly display, publicly perform, sublicense, and distribute the
+      Work and such Derivative Works in Source or Object form.
+
+   3. Grant of Patent License. Subject to the terms and conditions of
+      this License, each Contributor hereby grants to You a perpetual,
+      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+      (except as stated in this section) patent license to make, have made,
+      use, offer to sell, sell, import, and otherwise transfer the Work,
+      where such license applies only to those patent claims licensable
+      by such Contributor that are necessarily infringed by their
+      Contribution(s) alone or by combination of their Contribution(s)
+      with the Work to which such Contribution(s) was submitted. If You
+      institute patent litigation against any entity (including a
+      cross-claim or counterclaim in a lawsuit) alleging that the Work
+      or a Contribution incorporated within the Work constitutes direct
+      or contributory patent infringement, then any patent licenses
+      granted to You under this License for that Work shall terminate
+      as of the date such litigation is filed.
+
+   4. Redistribution. You may reproduce and distribute copies of the
+      Work or Derivative Works thereof in any medium, with or without
+      modifications, and in Source or Object form, provided that You
+      meet the following conditions:
+
+      (a) You must give any other recipients of the Work or
+          Derivative Works a copy of this License; and
+
+      (b) You must cause any modified files to carry prominent notices
+          stating that You changed the files; and
+
+      (c) You must retain, in the Source form of any Derivative Works
+          that You distribute, all copyright, patent, trademark, and
+          attribution notices from the Source form of the Work,
+          excluding those notices that do not pertain to any part of
+          the Derivative Works; and
+
+      (d) If the Work includes a "NOTICE" text file as part of its
+          distribution, then any Derivative Works that You distribute must
+          include a readable copy of the attribution notices contained
+          within such NOTICE file, excluding those notices that do not
+          pertain to any part of the Derivative Works, in at least one
+          of the following places: within a NOTICE text file distributed
+          as part of the Derivative Works; within the Source form or
+          documentation, if provided along with the Derivative Works; or,
+          within a display generated by the Derivative Works, if and
+          wherever such third-party notices normally appear. The contents
+          of the NOTICE file are for informational purposes only and
+          do not modify the License. You may add Your own attribution
+          notices within Derivative Works that You distribute, alongside
+          or as an addendum to the NOTICE text from the Work, provided
+          that such additional attribution notices cannot be construed
+          as modifying the License.
+
+      You may add Your own copyright statement to Your modifications and
+      may provide additional or different license terms and conditions
+      for use, reproduction, or distribution of Your modifications, or
+      for any such Derivative Works as a whole, provided Your use,
+      reproduction, and distribution of the Work otherwise complies with
+      the conditions stated in this License.
+
+   5. Submission of Contributions. Unless You explicitly state otherwise,
+      any Contribution intentionally submitted for inclusion in the Work
+      by You to the Licensor shall be under the terms and conditions of
+      this License, without any additional terms or conditions.
+      Notwithstanding the above, nothing herein shall supersede or modify
+      the terms of any separate license agreement you may have executed
+      with Licensor regarding such Contributions.
+
+   6. Trademarks. This License does not grant permission to use the trade
+      names, trademarks, service marks, or product names of the Licensor,
+      except as required for reasonable and customary use in describing the
+      origin of the Work and reproducing the content of the NOTICE file.
+
+   7. Disclaimer of Warranty. Unless required by applicable law or
+      agreed to in writing, Licensor provides the Work (and each
+      Contributor provides its Contributions) on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+      implied, including, without limitation, any warranties or conditions
+      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A
+      PARTICULAR PURPOSE. You are solely responsible for determining the
+      appropriateness of using or redistributing the Work and assume any
+      risks associated with Your exercise of permissions under this License.
+
+   8. Limitation of Liability. In no event and under no legal theory,
+      whether in tort (including negligence), contract, or otherwise,
+      unless required by applicable law (such as deliberate and grossly
+      negligent acts) or agreed to in writing, shall any Contributor be
+      liable to You for damages, including any direct, indirect, special,
+      incidental, or consequential damages of any character arising as a
+      result of this License or out of the use or inability to use the
+      Work (including but not limited to damages for loss of goodwill,
+      work stoppage, computer failure or malfunction, or any and all
+      other commercial damages or losses), even if such Contributor
+      has been advised of the possibility of such damages.
+
+   9. Accepting Warranty or Additional Liability. While redistributing
+      the Work or Derivative Works thereof, You may choose to offer,
+      and charge a fee for, acceptance of support, warranty, indemnity,
+      or other liability obligations and/or rights consistent with this
+      License. However, in accepting such obligations, You may act only
+      on Your own behalf and on Your sole responsibility, not on behalf
+      of any other Contributor, and only if You agree to indemnify,
+      defend, and hold each Contributor harmless for any liability
+      incurred by, or claims asserted against, such Contributor by reason
+      of your accepting any such warranty or additional liability.
+
+   END OF TERMS AND CONDITIONS
+
+-->
+
+
+
+
+<dialog id="appearanceDialog" class="appearance-editor" aria-labelledby="appearanceTitle" aria-describedby="appearanceDescription">
+ <div class="appearance-heading"><div><span class="appearance-eyebrow">MAKE YOURSELF AT HOME</span><h2 id="appearanceTitle">Appearance</h2></div><button type="button" id="appearanceClose" class="appearance-icon-button" aria-label="Close appearance settings" title="Close appearance settings"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg></button></div>
+ <p id="appearanceDescription" class="appearance-description">Make Agentaus feel like your space. Changes preview instantly and save automatically in this browser.</p>
+ <fieldset class="appearance-fieldset"><legend>Choose a theme <span id="appearancePresetLabel">Graphite</span></legend><div class="appearance-presets" role="group" aria-label="Theme presets">
+  <button type="button" class="appearance-preset" data-theme-preset="graphite" aria-pressed="true"><span class="appearance-swatch" style="background:#212222;color:#eceeed"><i style="background:#171818"></i><b style="background:#b7efce"></b><em></em></span><span>Graphite</span></button>
+  <button type="button" class="appearance-preset" data-theme-preset="paper" aria-pressed="false"><span class="appearance-swatch" style="background:#fafbf9;color:#202a23"><i style="background:#f0f2ef"></i><b style="background:#1d6748"></b><em></em></span><span>Paper</span></button>
+  <button type="button" class="appearance-preset" data-theme-preset="midnight" aria-pressed="false"><span class="appearance-swatch" style="background:#111827;color:#e7edfa"><i style="background:#0b101a"></i><b style="background:#8cb9ff"></b><em></em></span><span>Midnight</span></button>
+  <button type="button" class="appearance-preset" data-theme-preset="forest" aria-pressed="false"><span class="appearance-swatch" style="background:#15241d;color:#e5f0e8"><i style="background:#0d1812"></i><b style="background:#a7d8ad"></b><em></em></span><span>Forest</span></button>
+  <button type="button" class="appearance-preset" data-theme-preset="plum" aria-pressed="false"><span class="appearance-swatch" style="background:#281d2b;color:#f1e9f3"><i style="background:#1b131d"></i><b style="background:#d6b5f2"></b><em></em></span><span>Plum</span></button>
+  <button type="button" class="appearance-preset" data-theme-preset="sand" aria-pressed="false"><span class="appearance-swatch" style="background:#f5efe3;color:#3a3028"><i style="background:#e8dfd1"></i><b style="background:#8a542f"></b><em></em></span><span>Sand</span></button>
+ </div></fieldset>
+ <fieldset class="appearance-fieldset"><legend>Or make it your own</legend><div class="appearance-colors">
+  <div class="appearance-color-field"><label for="appearanceAccentHex">Accent</label><div class="appearance-color-pair"><input type="color" id="appearanceAccentColor" aria-label="Choose accent color" value="#b7efce"><input type="text" id="appearanceAccentHex" value="#b7efce" aria-label="Accent hex color" autocomplete="off" spellcheck="false" maxlength="7" inputmode="text"></div></div>
+  <div class="appearance-color-field"><label for="appearanceBackgroundHex">Background</label><div class="appearance-color-pair"><input type="color" id="appearanceBackgroundColor" aria-label="Choose background color" value="#212222"><input type="text" id="appearanceBackgroundHex" value="#212222" aria-label="Background hex color" autocomplete="off" spellcheck="false" maxlength="7" inputmode="text"></div></div>
+  <div class="appearance-color-field"><label for="appearanceTextHex">Text</label><div class="appearance-color-pair"><input type="color" id="appearanceTextColor" aria-label="Choose text color" value="#eceeed"><input type="text" id="appearanceTextHex" value="#eceeed" aria-label="Text hex color" autocomplete="off" spellcheck="false" maxlength="7" inputmode="text"></div></div>
+ </div><p id="appearanceColorStatus" class="appearance-color-status" role="status" hidden></p><p id="appearanceContrastWarning" class="appearance-warning" role="status" hidden></p></fieldset>
+ <fieldset class="appearance-fieldset appearance-typography"><legend>Make it comfortable</legend>
+  <div class="appearance-select-row"><label for="appearanceFont">Font</label><select id="appearanceFont"><option value="system">System sans</option><option value="arial">Arial</option><option value="verdana">Verdana</option><option value="georgia">Georgia · serif</option><option value="trebuchet">Trebuchet MS</option><option value="mono">Monospace</option></select></div>
+  <div class="appearance-slider-label"><label for="appearanceTextSize">Chat text size</label><output id="appearanceTextSizeValue" for="appearanceTextSize">15 px</output></div><input type="range" id="appearanceTextSize" min="13" max="20" step="1" value="15">
+  <div class="appearance-slider-label"><label for="appearanceLineSpacing">Line spacing</label><output id="appearanceLineSpacingValue" for="appearanceLineSpacing">1.80</output></div><input type="range" id="appearanceLineSpacing" min="1.5" max="2.1" step="0.05" value="1.8">
+  <div class="appearance-select-row"><label for="appearanceReadingWidth">Reading width</label><select id="appearanceReadingWidth"><option value="640">Focused · 640 px</option><option value="780" selected>Balanced · 780 px</option><option value="960">Wide · 960 px</option></select></div>
+  <label class="appearance-toggle-row" for="appearanceCompact"><span><strong>Compact spacing</strong><small>Keep messages and controls closer together.</small></span><input type="checkbox" id="appearanceCompact" role="switch"></label>
+ </fieldset>
+ <div class="appearance-preview" aria-label="Live appearance preview"><span class="appearance-preview-label">YOUR PREVIEW</span><p>A space that feels like you.</p><span class="appearance-preview-detail">Clear thoughts, fresh ideas, and a little room to explore.</span><span class="appearance-preview-button">Agentaus</span></div>
+ <div class="appearance-footer"><button type="button" id="appearanceReset" class="appearance-reset">Reset defaults</button><span class="appearance-autosave">Saved automatically</span><button type="button" id="appearanceDone" class="appearance-done">Done</button></div>
+</dialog>
+
+
+
+<script src="app.js"></script>
+</body>
+</html>
