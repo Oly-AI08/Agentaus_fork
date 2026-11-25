@@ -138,7 +138,7 @@ Prepare the change for my review.
 
 For web-assisted answers, enable **Web search** before sending the request. The app requests web tools separately from custom file tools and displays source links returned with the answer. Returned links are not independently verified citations.
 
-## Optional PC companion
+## Optional PC companion (Work in progress, not included thus far, installing node won't do much, may implement it with node)
 
 The companion is a local Node.js service for approved folders on your own computer. Obtain the companion package separately if this repository contains only the website HTML. The website alone does not install the service.
 
