@@ -8,8 +8,6 @@ approve on this computer. Changes come back as proposals for review; the
 companion saves previous file bytes before its writes, checks file versions
 and keeps local backups with Undo.
 
-Keep `server.mjs`, the launcher and `Agentaus.html` together in one folder.
-
 ## Package contents
 
 | File | Purpose |
@@ -53,6 +51,8 @@ Run the launcher:
 
 `Start.sh` prompts for the website origin and for one or more approved
 folders, then starts the service. It requires Node.js 22+.
+
+Untested on macOS, will be tested on Debian only
 
 ## Approved folders and options
 
