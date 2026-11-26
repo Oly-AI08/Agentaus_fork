@@ -1,0 +1,32 @@
+{
+  "id": "agentaus-chat-space",
+  "name": "Agentaus · Your chat space",
+  "short_name": "Agentaus",
+  "description": "A private chat space that runs entirely in your browser. Chats and files stay on your device.",
+  "lang": "en",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#171818",
+  "theme_color": "#171818",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "categories": ["productivity"]
+}

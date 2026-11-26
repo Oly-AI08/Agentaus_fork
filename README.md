@@ -8,6 +8,8 @@ approve on this computer. Changes come back as proposals for review; the
 companion saves previous file bytes before its writes, checks file versions
 and keeps local backups with Undo.
 
+Keep `server.mjs`, the launcher and `Agentaus.html` together in one folder.
+
 ## Package contents
 
 | File | Purpose |
@@ -19,6 +21,9 @@ and keeps local backups with Undo.
 | `Start.sh` | Launcher for macOS and Linux |
 | `Agentaus.html` | Local copy of the Agentaus app |
 | `app.js`, `styles.css` | Readable browser source used by the local app |
+| `manifest.webmanifest` | PWA manifest: install-to-home-screen, standalone display |
+| `sw.js` | Service worker: offline shell, cached assets, never touches your data |
+| `icons/` | App icons (192/512 PNG, SVG favicon, Apple touch icon) |
 | `README.md` | This file |
 | `LICENSES/` | Third-party notices; see `LICENSES/README.md` |
 
@@ -51,8 +56,6 @@ Run the launcher:
 
 `Start.sh` prompts for the website origin and for one or more approved
 folders, then starts the service. It requires Node.js 22+.
-
-Untested on macOS, will be tested on Debian only
 
 ## Approved folders and options
 
@@ -109,8 +112,8 @@ Automated checks have exercised companion HTTP operations, authorization and
 path boundaries, backups and Undo, actual file creation/editing, document
 package compatibility, browser interactions and key/token handling. Provider
 calls in app tests were mocked; they do not establish live account access.
-Windows launcher interaction, actual Windows permissions and browser
-local-network prompts still need verification on the target PC.
+The companion has been tested on Windows only; the macOS/Linux launcher
+(`Start.sh`) has not been exercised.
 
 ## Third-party components
 
